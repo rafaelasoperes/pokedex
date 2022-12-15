@@ -23,15 +23,26 @@ const renderPokemon = async (pokemon) => {
   pokemonName.innerHTML = 'Loading...';
   pokemonNumber.innerHTML = '';
 
+  const selectPokemonSprite = (sprites) => {
+    const isGenFive = 
+    sprites.versions['generation-v']['black-white'].animated.front_default !== null;
+
+    if (isGenFive) {
+      return sprites.versions['generation-v']['black-white'].animated.front_default;
+    }
+    return sprites.front_default;
+  }
+
   const data = await fetchPokemon(pokemon);
 
   if (data) {
     pokemonImage.style.display = 'block';
     pokemonName.innerHTML = data.name;
     pokemonNumber.innerHTML = data.id;
-    pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+    pokemonImage.src = selectPokemonSprite(data.sprites);
     input.value = '';
     searchPokemon = data.id;
+
   } else {
     pokemonImage.style.display = 'none';
     pokemonName.innerHTML = 'Not found :c';
