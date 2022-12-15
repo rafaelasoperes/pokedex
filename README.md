@@ -2,6 +2,8 @@
 #### pokedex construída com PokeAPI  
 link: https://pokeapi.co/ 
 
+Você pode ter acesso a esse projeto : <a href="https://rafaelasoperes.github.io/pokedex/"> Clique aqui </a>
+
 A aplicação foi criada atráves de um consumo da API PokeAPI, onde utilizamos dados como id, nome e imagens dos Pokemons.    
 
 Nessa Pokedex, você consegue procurar o seu Pokemon pelo ID dele ou pelo nome, como resposta você recebe a imagem do gif dele na tela.
